@@ -1,3 +1,4 @@
+module Contracts
 module MethodDecorators
   def self.extended(klass)
     class << klass
@@ -118,6 +119,7 @@ class Decorator
   def initialize(klass, method)
     @method = method
   end
+end
 end
 
 

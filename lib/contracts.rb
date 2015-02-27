@@ -1,5 +1,5 @@
-require 'decorators'
-require 'builtin_contracts'
+require File.expand_path('../decorators', __FILE__)
+require File.expand_path('../builtin_contracts', __FILE__)
 
 class ContractError < ArgumentError
 end
@@ -48,7 +48,7 @@ end
 #   Contract [contract names] => return_value
 #
 # This class also provides useful callbacks and a validation method.
-class Contract < Decorator
+class Contract < Contracts::Decorator
   attr_reader :args_contracts, :ret_contract, :klass, :method
   # decorator_name :contract
   def initialize(klass, method, *contracts)
